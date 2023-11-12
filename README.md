@@ -1,7 +1,7 @@
 # Point Cloud Tree Segmentation and Tree Phenotype Retrieval Program
 ## Introduction
 This project is designed to process tree point cloud data. It offers various essential functionalities, including point cloud segmentation, point cloud merging, and basic phenotype retrieval. Please note that this project is specifically tailored for PLY files. 
-## REquirement
+## Requirement
 Before utilizing this set of code, make sure you have the following packages and libraries installed:
 ### open3d: 
 You can install it using pip with the following command:
