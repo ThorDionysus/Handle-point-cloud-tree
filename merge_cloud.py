@@ -1,7 +1,11 @@
 import open3d as o3d
+import os
 
-# Enter the file path of the point cloud to be merged
-file_paths = []
+# Enter the folder path containing the PLY files to be merged
+folder_path = ""  # Replace with your input folder path
+
+# Get a list of all PLY files in the folder
+file_paths = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if file.endswith(".ply")]
 
 point_clouds = []
 for file_path in file_paths:
@@ -11,6 +15,7 @@ for file_path in file_paths:
 merged_point_cloud = o3d.geometry.PointCloud()
 for point_cloud in point_clouds:
     merged_point_cloud += point_cloud
-    
-# enter the path that you want the result to be saved
-o3d.io.write_point_cloud("E:\cloudsegmentation\S-2.ply", merged_point_cloud)
+
+# Enter the path where you want the result to be saved
+output_path = ""  # Replace with your desired output file path
+o3d.io.write_point_cloud(output_path, merged_point_cloud)
