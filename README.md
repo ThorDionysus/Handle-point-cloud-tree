@@ -28,7 +28,7 @@ K-Means clustering is applied to the colors of the points to group them into clu
 Each cluster's mean color is calculated, and the clusters are sorted based on this mean color.
 The sorted clusters are saved as separate PointCloud files.
 ### Usage
-1. Clone or download this repository to your local machine.
+1.Clone or download this repository to your local machine.
 2.Replace "file_path" in the code with the path to the point cloud file you want to process.
 3.Adjust the n_clusters variable in the K-Means section to set the desired number of clusters.
 4.Update the "flie_path" in the code to specify the path where you want to save the resulting point cloud files.
@@ -39,7 +39,7 @@ This Python script uses the Open3D library to merge multiple PLY format point cl
 
 ### Usage
 1. Clone or download this repository to your local machine.
-2.  Modify the script to specify your input folder and desired output file path:
+2. Modify the script to specify your input folder and desired output file path:
 - Set the `folder_path` variable to the path of the folder containing the PLY files you want to merge.
 - Set the `output_path` variable to the path where you want to save the merged point cloud.
 3. Run the script.
