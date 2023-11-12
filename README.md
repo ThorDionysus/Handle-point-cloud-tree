@@ -35,6 +35,8 @@ The sorted clusters are saved as separate PointCloud files.
 5.Run the script.
 ## Point Cloud Merging
 This Python script uses the Open3D library to merge multiple PLY format point clouds located in a specified input folder. The merged point cloud is then saved as a single PLY file in the desired output location.
+### Code Explanation
+
 ### Usage
 1. Clone or download this repository to your local machine.
 2.  Modify the script to specify your input folder and desired output file path:
