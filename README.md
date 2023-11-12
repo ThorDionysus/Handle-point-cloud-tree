@@ -42,6 +42,16 @@ This Python script uses the Open3D library to merge multiple PLY format point cl
 - Set the `output_path` variable to the path where you want to save the merged point cloud.
 3. Run the script.
 ## Basic Phenotype Retrieval
+Basic Phenotype Retrieval is a Python program designed to analyze point cloud data from trees. It provides a set of functionalities to calculate various tree-related parameters, such as tree height, projection area, crown maximum radius, volume, and surface area. This program is specifically tailored for PLY files.
+### Code Explanation
+
+### Usage
+1.Load the point cloud data by specifying the file path.
+2.Perform point cloud preprocessing, including radius filtering.
 
 ## Undercanopy Height Retrieval
+
+### Code Explanation
+
+### Usage
 
