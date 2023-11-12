@@ -19,7 +19,16 @@ pip install scikit-learn
 ensure that these packages are available in your Python environment before executing the code. Additionally, verify that you have a valid point cloud file located at the specified "file_path" or replace it with the actual path to the point cloud you wish to work with.
 
 ## Point Cloud K-Means Clustering Segmentation
-
+This Python script is designed to cluster and sort a 3D point cloud using the K-Means clustering algorithm. It utilizes the Open3D library for point cloud processing and the scikit-learn library for K-Means clustering. The code reads a point cloud file, clusters the points based on their color information, and sorts the clusters by the mean color of each cluster.
+### Usage
+Replace "file_path" in the code with the path to the point cloud file you want to process.
+Adjust the n_clusters variable in the K-Means section to set the desired number of clusters.
+Update the "flie_path" in the code to specify the path where you want to save the resulting point cloud files.
+### Code Explanation
+The script loads the point cloud data from the specified file, extracting both colors and points.
+K-Means clustering is applied to the colors of the points to group them into clusters.
+Each cluster's mean color is calculated, and the clusters are sorted based on this mean color.
+The sorted clusters are saved as separate PointCloud files.
 ## Point Cloud Merging
 
 ## Basic Phenotype Retrieval
