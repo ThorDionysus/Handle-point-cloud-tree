@@ -46,7 +46,7 @@ This code segment extracts all PLY-format files from the specified target folder
 ## Basic Phenotype Retrieval
 Basic Phenotype Retrieval is a Python program designed to analyze point cloud data from trees. It provides a set of functionalities to calculate various tree-related parameters, such as tree height, projection area, crown maximum radius, volume, and surface area. This program is specifically tailored for PLY files.
 ### Code Explanation
-
+This code segment calculates various basic morphological parameters of point cloud trees using custom-defined functions.It calculates the height of trees by sorting the coordinates of the point cloud based on their z-values.Then, it utilizes projection and the differential element method to approximate the tree's projected area. Similarly, it employs the differential element method to estimate the volume of the tree.It uses a rotation matrix to rotate the point cloud tree at intervals of 1 degree from 0 degrees to 180 degrees. By comparing the diameters measured at each angle, it ultimately determines the maximum diameter of the point cloud tree.Finally, the code will output the values of the aforementioned basic tree morphological 
 ### Usage
 1. Load the point cloud data by specifying the file path.
 2. Perform point cloud preprocessing, including radius filtering.
