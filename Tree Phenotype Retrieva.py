@@ -4,10 +4,6 @@ import numpy as np
 # import the point cloud
 pcd = o3d.io.read_point_cloud(r"file_path")
 
-# radius filter,you can change the number of nb_points and radius to fit your point cloud data
-pcd, index = pcd.remove_radius_outlier(nb_points=20, radius=0.04)
-
-
 # calculate the tree height
 def calculate_tree_height(pcd, m, n):
     
@@ -74,7 +70,7 @@ def calculate_point_cloud_volume(pcd):
 
 projection_direction = np.array([0, 0, 1], dtype=np.float64)  
 m = 40
-n = 30
+n = 40
 k = 40
 
 tree_height = calculate_tree_height(pcd, m, n)
