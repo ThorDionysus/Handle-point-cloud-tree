@@ -48,15 +48,20 @@ Basic Phenotype Retrieval is a Python program designed to analyze point cloud da
 ### Code Explanation
 This code segment calculates various basic morphological parameters of point cloud trees using custom-defined functions.It calculates the height of trees by sorting the coordinates of the point cloud based on their z-values.Then, it utilizes projection and the differential element method to approximate the tree's projected area. Similarly, it employs the differential element method to estimate the volume of the tree.It uses a rotation matrix to rotate the point cloud tree at intervals of 1 degree from 0 degrees to 180 degrees. By comparing the diameters measured at each angle, it ultimately determines the maximum diameter of the point cloud tree.Finally, the code will output the values of the aforementioned basic tree morphological 
 ### Usage
-1. Load the point cloud data by specifying the file path.
-2. Perform point cloud preprocessing, including radius filtering.
+1. Clone or download this repository to your local machine.
+2. Load the point cloud data by specifying the file path.
+3. Perform point cloud preprocessing, including radius filtering.
 
 ## Measure Undercanopy Height
-
+This program achieves the retrieval of advanced parameters under the branches of trees by drawing point clouds to approximate and estimate the positions of specific points.
 ### Code Explanation
 
+This code first sorts the point cloud based on the z-values. Then, it selects the top n points and performs drawing on these points to achieve the functionality of capturing. Based on the distribution of these points and in conjunction with the tree point cloud, it determines the current position of the capture plane and subsequently measures the height of the capture plane. This program requires multiple adjustments of the n value to capture positions under the branches accurately.
 ### Usage
-
+1. Clone or download this repository to your local machine.
+2. Load the point cloud data by specifying the file path.
+3. Set an initial value for n, and adjust it based on the results and the shape of the bounding box.
+   
 ## Point Cloud RGB Extration
 
 ### Code Explanation
