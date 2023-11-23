@@ -113,7 +113,7 @@ def filter_point_cloud_by_rgb(point_cloud, rgb_range):
 
 
 # Read point cloud data
-input_point_cloud_file = r"input_file_path"
+input_point_cloud_file = r"file_path"
 point_cloud = o3d.io.read_point_cloud(input_point_cloud_file)
 
 
@@ -121,5 +121,5 @@ point_cloud = o3d.io.read_point_cloud(input_point_cloud_file)
 filtered_point_cloud = filter_point_cloud_by_rgb(point_cloud, rgb_color)
 
 # Save the filtered point cloud data
-output_point_cloud_file = r“output_file_path"
+output_point_cloud_file = r“file_path"
 o3d.io.write_point_cloud(output_point_cloud_file, filtered_point_cloud)
