@@ -60,10 +60,10 @@ This code first sorts the point cloud based on the z-values. Then, it selects th
 ### Usage
 1. Clone or download this repository to your local machine.
 2. Load the point cloud data by specifying the file path.
-3. Set an initial value for n, and adjust it based on the results and the shape of the bounding box.
+3. Set an initial value for “n”, and adjust it based on the results and the shape of the bounding box.
    
 ## Point Cloud RGB Extration
-
+This program can filter point clouds in a file based on input RGB values by selecting points whose RGB values closely match the specified input.
 ### Code Explanation
-
+This code first creates a graphical window where the user can input and preview the desired RGB values. Then, it filters the point cloud by selecting points with RGB values where the absolute differences for each component are within 10 of the target values. Afterward, it creates a new point cloud file and outputs the result.
 ### Usage
