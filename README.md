@@ -67,3 +67,6 @@ This program can filter point clouds in a file based on input RGB values by sele
 ### Code Explanation
 This code first creates a graphical window where the user can input and preview the desired RGB values. Then, it filters the point cloud by selecting points with RGB values where the absolute differences for each component are within 10 of the target values. Afterward, it creates a new point cloud file and outputs the result.
 ### Usage
+1. Clone or download this repository to your local machine.
+2. Replace "file_path" in the code with the path to the point cloud file you want to process.
+3. Input the RGB value before colsimg the wiondow, the result will be saved in the output file path
