@@ -51,9 +51,15 @@ This code segment calculates various basic morphological parameters of point clo
 1. Load the point cloud data by specifying the file path.
 2. Perform point cloud preprocessing, including radius filtering.
 
-## Undercanopy Height Retrieval
+## measure_undercanopy_height
 
 ### Code Explanation
 
 ### Usage
+
+## point_cloud_RGB_extration
+
+## measure_undercanopy_height
+
+### Code Explanation
 
