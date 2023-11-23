@@ -59,7 +59,6 @@ This code segment calculates various basic morphological parameters of point clo
 
 ## point_cloud_RGB_extration
 
-## measure_undercanopy_height
-
 ### Code Explanation
 
+### Usage
