@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import os
 
 # Read point cloud file
-pcd = o3d.io.read_point_cloud("D:\Pointcloud File\S526.ply")
+pcd = o3d.io.read_point_cloud("input_point_cloud.ply")
 # Perform point cloud denoising
 pcd, index = pcd.remove_radius_outlier(nb_points=20, radius=0.05)
 # Save the denoised file
-ply_filename = "D:\Pointcloud File/S526-F.ply"
+ply_filename = "output_point_cloud.ply"
 # Save point cloud as PLY file
 o3d.io.write_point_cloud(ply_filename, pcd)
 # Build KD tree to accelerate nearest point search
@@ -59,7 +59,7 @@ plt.xlabel('Length')
 plt.ylabel('Point Number')
 plt.xlim(0, 0.015)
 
-output_folder = ""
+output_folder = "your_png_output_path"
 output_filename = "distance_distribution.png"
 output_path = os.path.join(output_folder, output_filename)
 plt.savefig(output_path)
