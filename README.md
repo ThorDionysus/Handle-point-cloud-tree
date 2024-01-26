@@ -1,6 +1,6 @@
 # Point Cloud Tree Segmentation and Tree Phenotype Retrieval Program
 ## Introduction
-This project is designed to process tree point cloud data. It offers various essential functionalities, including point cloud segmentation, point cloud merging, and basic phenotype retrieval. Please note that this project is specifically tailored for PLY files. 
+This project is designed to process tree point cloud data. It offers various essential functionalities, including calculating point cloud density，point cloud segmentation, point cloud merging, and basic phenotype retrieval. Please note that this project is specifically tailored for PLY files. 
 ### Requirement
 Before utilizing this set of code, make sure you have the following packages and libraries installed:
 #### open3d: 
@@ -19,6 +19,9 @@ You can install scikit-learn with:
 pip install scikit-learn
 ```
 ensure that these packages are available in your Python environment before executing the code. Additionally, verify that you have a valid point cloud file located at the specified "file_path" or replace it with the actual path to the point cloud you wish to work with.
+
+## Point Cloud Density Calculation
+
 
 ## Point Cloud K-Means Clustering Segmentation
 This Python script is designed to cluster and sort a 3D point cloud using the K-Means clustering algorithm. It utilizes the Open3D library for point cloud processing and the scikit-learn library for K-Means clustering. The code reads a point cloud file, clusters the points based on their color information, and sorts the clusters by the mean color of each cluster.
