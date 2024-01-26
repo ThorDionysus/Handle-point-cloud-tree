@@ -26,15 +26,11 @@ for i in range(len(pcd.points)):
         nearest_neighbor_distances.append(nearest_neighbor_distance)
 
         # Update the sum and sum of squares of nearest distances
-        sum_distances += nearest_neighbor_distance
-        sum_distances_squared += nearest_neighbor_distance ** 2
+        sum_distances += nearest_neighbor_distance        
 # Calculate the average distance
 average_distance = np.mean(nearest_neighbor_distances)
-# Calculate distance-weighted value
-Q_distance = sum_distances_squared / sum_distances
 # Output
 print(f"Average nearest neighbor distance: {average_distance:.10f} m")
-print(f"Distance-weighted value: {Q_distance:.10f} m")
 
 # Initialize a dictionary to store the count of points for each distance value
 distance_count = {}
