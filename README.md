@@ -37,7 +37,7 @@ This python script is designed to cluster and sort a 3D point cloud using the K-
 The script loads the point cloud data from the specified file, extracting both colors and points.
 K-Means clustering is applied to the colors of the points to group them into clusters.
 Each cluster's mean color is calculated, and the clusters are sorted based on this mean color.
-The sorted clusters are saved as separate PointCloud files.
+The sorted clusters are saved as separate point cloud files.
 ### Usage
 1. Clone or download this repository to your local machine.
 2. Replace "file_path" in the code with the path to the point cloud file you want to process.
