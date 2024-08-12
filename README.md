@@ -64,14 +64,14 @@ This code segment calculates various basic morphological parameters of point clo
 3. Perform point cloud preprocessing, including radius filtering.
 
 ## The Measurement of Undercanopy Height
-This program achieves the retrieval of advanced parameters under the branches of trees by drawing point clouds to approximate and estimate the positions of specific points.
+This program achieves the retrieval of advanced parameters under the branches of trees by calculating point clouds the bounding box to approximate and estimate the positions of specific points.
 ### Code Explanation
 
-This code first sorts the point cloud based on the z-values. Then, it selects the top n points and performs drawing on these points to achieve the functionality of capturing. Based on the distribution of these points and in conjunction with the tree point cloud, it determines the current position of the capture plane and subsequently measures the height of the capture plane. This program requires multiple adjustments of the n value to capture positions under the branches accurately.
+This code sorts the tree point cloud file by z-values and then groups every n adjacent points into a group. It calculates the bounding box area for each group of points. By comparing the rate of area expansion, the code identifies the branching point on the tree trunk, recording it as the tree's branch height. Users should adjust the values of n and deta according to their data characteristics to ensure that the number of points in each group and the rate of area expansion match the characteristics of the data being processed. If the appropriate value of deta cannot be determined, users can output the areas of all bounding boxes during code execution to help identify the approximate position of deta based on their changes.
 ### Usage
 1. Clone or download this repository to your local machine.
 2. Load the point cloud data by specifying the file path.
-3. Set an initial value for “n”, and adjust it based on the results and the shape of the bounding box.
+3. Set an initial value for "n" and "deta", and adjust it based on the result.
    
 ## Point Cloud RGB Extration
 This program can filter point clouds in a file based on input RGB values by selecting points whose RGB values closely match the specified input.
