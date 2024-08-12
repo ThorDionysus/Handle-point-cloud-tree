@@ -1,35 +1,61 @@
 import open3d as o3d
 import numpy as np
-import matplotlib.pyplot as plt
 
-# import point cloud data
-pcd = o3d.io.read_point_cloud(r"E:\cloudsegmentation\S-1.ply")
+# Read point cloud data
+pcd = o3d.io.read_point_cloud(r"your-point-cloud-flie.ply")
+
+# Convert point cloud to NumPy array
 points = np.asarray(pcd.points)
 points = points[np.argsort(points[:, 2])]
 
-# Please adjust the value of 'n' based on the actual results
-n = 1600  
+# Define n, representing the number of points to compare
+n = 1000  # You can adjust the value of n as needed
+deta = 0.5
 
-selected_points = points[:n]
-min_x, min_y = np.min(selected_points[:, :2], axis=0)
-max_x, max_y = np.max(selected_points[:, :2], axis=0)
+def split_array(arr, n):
+    arr = np.asarray(arr)
+    num_groups = int(np.ceil(len(arr) / n))
+    groups = [arr[i * n:(i + 1) * n] for i in range(num_groups)]
+    return groups
 
-lowest_points = points[np.argsort(points[:, 2])[:50]]
-avg_lowest_height = np.mean(lowest_points[:, 2])
+def compute_bounding_box_area(group):
+    min_bound = np.min(group, axis=0)
+    max_bound = np.max(group, axis=0)
+    # Calculate length and width
+    length = max_bound[0] - min_bound[0]
+    width = max_bound[1] - min_bound[1]
+    # Calculate area
+    area = length * width
+    return area
 
-plt.figure()
-plt.scatter(selected_points[:, 0], selected_points[:, 1], c='b', label='Points')
-plt.plot([min_x, max_x, max_x, min_x, min_x], [min_y, min_y, max_y, max_y, min_y], c='r', label='Bounding Box')
-plt.xlabel('X Coordinate')
-plt.ylabel('Y Coordinate')
-plt.legend()
-plt.show()
+result = split_array(points, n)
+areas = []  # Initialize a list to store the area of each bounding box
 
-out_of_bounds_point = None
-for point in points:
-    if np.any(point[:2] < [min_x, min_y]) or np.any(point[:2] > [max_x, max_y]):
-        out_of_bounds_point = point
+for i, group in enumerate(result):
+    area = compute_bounding_box_area(group)
+    areas.append(area)
+# Print the area of each bounding box
+#for i, area in enumerate(areas):
+    #print(f"Area of Bounding Box for Group {i+1}: {area}")
+
+stop_index = None
+for i in range(1, len(areas)):
+    average_value = np.mean(areas[:i])
+    abs_diff = abs(areas[i] - average_value)
+
+    if abs_diff / average_value > deta:
+        stop_index = i
         break
 
-if out_of_bounds_point is not None:
-    print("undercanopy_height:", out_of_bounds_point[2]-avg_lowest_height)
+if stop_index is not None:
+    print(f"Stopping index: {stop_index}")
+    points_z_avg_first_20 = np.mean(points[:20, 2])
+
+    # Calculate the average z value for group(stop_index)
+    group_z_avg_stop_index = np.mean(result[stop_index+1][:20, 2])
+
+    # Calculate the difference between the two average z values
+    z_avg_diff = group_z_avg_stop_index - points_z_avg_first_20
+    print(f"undercanopy height: {z_avg_diff}")
+else:
+    print("No significant difference found.")
