@@ -54,8 +54,8 @@ This code segment extracts all PLY-format files from the specified target folder
 - Set the `folder_path` variable to the path of the folder containing the PLY files you want to merge.
 - Set the `output_path` variable to the path where you want to save the merged point cloud.
 3. Run the script.
-## Basic Phenotype Retrieval
-Basic Phenotype Retrieval is a Python program designed to analyze point cloud data from trees. It provides a set of functionalities to calculate various tree-related parameters, such as tree height, projection area and crown maximum radius. This program is specifically tailored for PLY files.
+## Phenotype Retrieval
+Intended to measure tree basic phenotype, there are several Python program designed to analyze point cloud data from trees. It provides a set of functionalities to calculate various tree-related phenotype, such as tree height, projection area, undercanopy height, crown breadth and crown maximum radius.
 ### Code Explanation
 This code segment calculates various basic morphological parameters of point cloud trees using custom-defined functions.It calculates the height of trees by sorting the coordinates of the point cloud based on their z-values.Then, It employs a convex hull algorithm to approximate the projected area and then visualizes the convex hull along with the shape of the point cloud, enabling the user to assess its accuracy.It uses a rotation matrix to rotate the point cloud tree at intervals of 1 degree from 0 degrees to 180 degrees. By comparing the diameters measured at each angle, it ultimately determines the maximum diameter of the point cloud tree.Finally, the code will output the values of the aforementioned basic tree morphological 
 ### Usage
