@@ -80,4 +80,4 @@ This code first creates a graphical window where the user can input and preview 
 ### Usage
 1. Clone or download this repository to your local machine.
 2. Replace "file_path" in the code with the path to the point cloud file you want to process.
-3. Input the RGB value before colsimg the wiondow, the result will be saved in the output file path
+3. Input the RGB value before colsing the wiondow, the result will be saved in the output file path
